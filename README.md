@@ -33,15 +33,25 @@
 **Listado de Productos**
 
 Nombre	Precio	Stock actual	Proveedor
+
 Manzanas 🍎	20.5	100	Juan Pérez
+
 Naranjas 🍊	25.87	80	María Rodríguez
+
 Plátanos 🍌	30.24	120	Carlos García
+
 Uvas 🍇	35.0	70	Ana Martínez
+
 Fresas 🍓	40.31	60	Pedro Gómez
+
 Cerezas 🍒	45.0	50	Laura López
+
 Melocotones 🍑	50.6	90	José Torres
+
 Peras 🍐	55.4	110	Carmen Guzmán
+
 Kiwis 🥝	60.0	100	Francisco Ramírez
+
 Piñas 🍍	65.12	80	Isabel Castro
 
 
