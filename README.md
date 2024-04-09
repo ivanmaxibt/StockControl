@@ -1,0 +1,2 @@
+# StockControl
+Aplicación con Django
