@@ -1,0 +1,29 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>Agregar producto</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="{{ form.nombre.id_for_label }}">Nombre</label>
+      <input type="text" class="form-control" id="{{ form.nombre.id_for_label }}" name="{{ form.nombre.html_name }}" value="{{ form.nombre.value|default:'' }}">
+    </div>
+    <div class="form-group">
+      <label for="{{ form.precio.id_for_label }}">Precio</label>
+      <input type="number" class="form-control" id="{{ form.precio.id_for_label }}" name="{{ form.precio.html_name }}" value="{{ form.precio.value|default:'' }}">
+    </div>
+    <div class="form-group">
+      <label for="{{ form.stock_actual.id_for_label }}">Stock actual</label>
+      <input type="number" class="form-control" id="{{ form.stock_actual.id_for_label }}" name="{{ form.stock_actual.html_name }}" value="{{ form.stock_actual.value|default:'' }}">
+    </div>
+    <div class="form-group">
+      <label for="{{ form.proveedor.id_for_label }}">Proveedor</label>
+      <select class="form-control" id="{{ form.proveedor.id_for_label }}" name="{{ form.proveedor.html_name }}">
+        {% for proveedor in form.proveedor.field.queryset %}
+          <option value="{{ proveedor.pk }}" {% if proveedor.pk == form.proveedor.value %}selected{% endif %}>{{ proveedor }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>StockControl</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">StockControl</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'agregar_proveedor' %}">Agregar Proveedor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'agregar_producto' %}">Agregar Producto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'listar_productos' %}">Listar Productos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+   
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
