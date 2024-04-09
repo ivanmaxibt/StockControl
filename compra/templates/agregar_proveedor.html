@@ -1,0 +1,21 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>Agregar proveedor</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="{{ form.nombre.id_for_label }}">Nombre</label>
+      <input type="text" class="form-control" id="{{ form.nombre.id_for_label }}" name="{{ form.nombre.html_name }}" value="{{ form.nombre.value|default:'' }}">
+    </div>
+    <div class="form-group">
+      <label for="{{ form.apellido.id_for_label }}">Apellido</label>
+      <input type="text" class="form-control" id="{{ form.apellido.id_for_label }}" name="{{ form.apellido.html_name }}" value="{{ form.apellido.value|default:'' }}">
+    </div>
+    <div class="form-group">
+      <label for="{{ form.dni.id_for_label }}">DNI</label>
+      <input type="number" class="form-control" id="{{ form.dni.id_for_label }}" name="{{ form.dni.html_name }}" value="{{ form.dni.value|default:'' }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+  </form>
+{% endblock %}

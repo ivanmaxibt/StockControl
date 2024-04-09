@@ -1,0 +1,25 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>Listado de productos</h2>
+  <table style="width:100%; text-align:center;">
+    <thead style="background-color: #4CAF50; color: white;">
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock actual</th>
+        <th>Proveedor</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for producto in productos %}
+        <tr>
+          <td>{{ producto.nombre }} {% if producto.nombre == "Manzanas" %}🍎{% elif producto.nombre == "Naranjas" %}🍊{% elif producto.nombre == "Plátanos" %}🍌{% elif producto.nombre == "Uvas" %}🍇{% elif producto.nombre == "Fresas" %}🍓{% elif producto.nombre == "Cerezas" %}🍒{% elif producto.nombre == "Melocotones" %}🍑{% elif producto.nombre == "Peras" %}🍐{% elif producto.nombre == "Kiwis" %}🥝{% elif producto.nombre == "Piñas" %}🍍{% endif %}</td>
+          <td>{{ producto.precio }}</td>
+          <td>{{ producto.stock_actual }}</td>
+          <td>{{ producto.proveedor.nombre }} {{ producto.proveedor.apellido }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
